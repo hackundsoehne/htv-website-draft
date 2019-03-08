@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body style="background: #1a1919 url('img/shapes/green_1.svg') no-repeat center center; background-position-x: 75vw; background-size: 90vh; background-position-y: -25vh">
+<div class="content-section">
+    <!--Row-->
+    <div class="location pb-50">
+        <div class="container">
+            <h1 class="large mb-10 pb4 tc optional_header"><span style="color: #00ff00">The Venue</span></h1>
+            <p class="tl">The hackathon is held in the <a href="https://zkm.de/en" target="_blank" class="green-link">ZKM mueseum</a>. The ZKM is a locally known media museum.</p>
+        </div>
+    </div>
+
+    <section class="pt-600">
+        <div class="block-map">
+            <div id="map" class="map"></div>
+        </div>
+        <div class="container block-contact">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-7 col-sm-5 col-sm-offset-7">
+                    <div class="block-info-3 contact-section">
+                        <h1 class="title" style="color: #00ff00">Contact</h1>
+                        <p>
+                            ZKM | Center for Art and Media<br/>
+                            Lorenzstraße 19<br/>
+                            76137 Karlsruhe<br/>
+                            Germany<br/>
+                        </p>
+                        <br/>
+                        <p>
+                            Email: <a class="green-link" href="mailto:info@hackundsoehne.de">info@hackundsoehne.de</a><br/>
+                        </p>
+                            <h1 class="title pt5 pb2" style="color: #00ff00">Getting there</h1>
+                            <p>Tram no. 2 goes from the main station to the ZKM.
+                            Get out at "Karlsruhe ZKM" or "Karlsruhe Arbeitsagentur", both are just a few
+                            minutes away from the hackathon.
+                            Schedules can be found <a class="orange-text" href="https://www.kvv.de/fahrt-planen/fahrplanauskunft.html">here</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+
+<script>
+   var map = L.map('map').setView([49.00074, 8.3835], 13);
+        
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    var myIcon = L.icon({
+        iconUrl: '/img/marker.png',
+        iconSize: [64, 64],
+        iconAnchor: [32, 64],
+        popupAnchor: [0, -64],
+        // shadowUrl: '/img/marker.png',
+        // shadowSize: [68, 95],
+        // shadowAnchor: [22, 94]
+    });
+
+    L.marker([49.00074, 8.3835], {icon: myIcon}).addTo(map)
+        .bindPopup('Our Venue: The ZKM')
+        .openPopup();
+</script>
+</body>
+</html>
