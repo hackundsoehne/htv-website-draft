@@ -1,4 +1,4 @@
-# Open Codes Hackathon Website
+# Hacktival Website
 
 Website at: https://hacktival.io
 
